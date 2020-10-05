@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "902958189889",
+    "firebase_url": "https://atv-uber.firebaseio.com",
+    "project_id": "atv-uber",
+    "storage_bucket": "atv-uber.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:902958189889:android:a383c619f2a0ba9d33a5c0",
+        "android_client_info": {
+          "package_name": "com.br.arley.atvuberapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "902958189889-pr3ht6esqmcid9pkj5cks1sp80q1p8gn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.br.arley.atvuberapp",
+            "certificate_hash": "38b11395912c391b888f51312fac4a98a90332ff"
+          }
+        },
+        {
+          "client_id": "902958189889-vhoo02no9va4tnb7u6c9suafalmnmpvo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVGDE5rhTTEyj7L2_v-n1edcu6aTrGIZ4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "902958189889-vhoo02no9va4tnb7u6c9suafalmnmpvo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
