@@ -1,5 +1,6 @@
 package com.br.arley.atvuberapp;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
 
 import android.os.Bundle;
@@ -41,7 +42,7 @@ public class MotoristaActivity extends FragmentActivity implements OnMapReadyCal
         myRef = database.getReference("uber");
         // Read from the database
 
-
+        setLastCoord();
     }
 
 
@@ -64,6 +65,36 @@ public class MotoristaActivity extends FragmentActivity implements OnMapReadyCal
 
                 previousMarker = mMap.addMarker(new MarkerOptions().position(latLng));
                 mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+
+            }
+        });
+    }
+
+    private void setLastCoord() {
+        myRef = database.getReference("uber");
+        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+                    double lat;
+                    double lng;
+
+                    if (previousMarker != null) {
+                        previousMarker.remove();
+                    }
+
+                    lat = Double.parseDouble(snapshot.child("coordenadas").child("latlng0").child("lat").getValue(String.class));
+
+                    lng = Double.parseDouble(snapshot.child("coordenadas").child("latlng0").child("lng").getValue(String.class));
+
+                    LatLng latLng = new LatLng(lat, lng);
+
+                    previousMarker = mMap.addMarker(new MarkerOptions().position(latLng));
+                    mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
 
             }
         });
